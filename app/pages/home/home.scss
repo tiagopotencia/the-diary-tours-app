@@ -1,0 +1,20 @@
+.home {
+  background: color($colors, primary);
+
+  h1 {
+    color: #fff;
+    font-family: serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    padding: 20px 40px;
+    text-align: center;
+
+    &:after {
+      color: color($colors, light);
+      content: "_";
+      display: block;
+      font-size: 4.2rem;
+      line-height: 2rem;
+    }
+  }
+}

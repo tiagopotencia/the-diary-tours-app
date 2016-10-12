@@ -1,0 +1,54 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "../pages/home/home";
+@import "../pages/detail/detail.scss";
+@import "../pages/places/places.scss";
+@import "../pages/list/list.scss";
+@import "../pages/intro/intro.scss";
+
+ion-card.large-thumbnail {
+  border-radius: 5px;
+  box-shadow: none;
+
+  .item {
+    padding-left: 0;
+  }
+
+  ion-label {
+    text-overflow: inherit;
+    white-space: inherit;
+  }
+
+  ion-thumbnail {
+    position: relative;
+    width: 16rem;
+    height: 12rem;
+    overflow: hidden;
+    margin: 0 16px 0 0;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 100%;
+      width: auto;
+      max-height: inherit;
+      max-width: inherit;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+
+      .portrait {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
