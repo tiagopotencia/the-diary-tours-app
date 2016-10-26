@@ -1,6 +1,7 @@
 import {NavController, Page} from 'ionic-angular';
 import {PlacesPage} from '../places/places';
 import {Cities} from '../../providers/cities/cities';
+import {ListPage} from '../list/list';
 
 @Page({
   templateUrl: 'build/pages/home/home.html'
@@ -18,6 +19,12 @@ export class HomePage {
 
   goToPlaces(id){
     this.nav.push(PlacesPage, {
+      id: id
+    })
+  }
+
+  goToList(id) {
+    this.nav.push(ListPage, {
       id: id
     })
   }
