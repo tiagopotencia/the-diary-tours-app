@@ -3,7 +3,7 @@
 		<ion-view>
       <img alt="The Diary Tours" class="logo" src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
 			<ion-nav-buttons side="left">
-				<button class="botao" ng-click="doSomething()">
+				<button id="btnLogin" class="botao" (click)="login()">
         Login
       </button>
 			</ion-nav-buttons>
@@ -72,7 +72,7 @@
 		</ion-slide>
 	</ion-slides>
 	<!-- <ion-icon name="remove"></ion-icon> -->
-
+<div id="divRoteiro" style="display:none">
 <h2>ROTEIRO DIA A DIA</h2>
 
 	<ion-pane class="roteiro" *ngFor="let city of cities" (click)="goToList(city.id)" style="width: 100%;
@@ -118,7 +118,7 @@
 			</a>
 		</ion-item>
 	</ion-pane>
-
+</div>
 	<footer style="background-color:#e5e5e5">
         <nav class="footer-nav">
             <!-- ngIf: footer.PrimaryNav && footer.PrimaryNav.length > 0 -->

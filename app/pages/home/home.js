@@ -3,7 +3,7 @@ import {PlacesPage} from '../places/places';
 import {Cities} from '../../providers/cities/cities';
 import {ListPage} from '../list/list';
 
-@Page({
+@Page({ 
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
@@ -33,5 +33,25 @@ export class HomePage {
     this.CitiesService.findAll().subscribe((data) => {
       this.cities = data;
     })
+  }
+
+  login(){
+    var tripCode = prompt("Insira seu código de viagem", "");
+
+    tripCode = tripCode.toUpperCase()
+
+    if (tripCode == "TFE2017")
+    {
+       var divRoteiro = document.getElementById('divRoteiro');
+       divRoteiro.setAttribute("style", "display:block");
+       alert("Seja bem-vindo!")
+
+       var btnLogin = document.getElementById('btnLogin');
+       btnLogin.innerText =tripCode;
+    }
+    else{
+      alert("Código de viagem não encontrado.")
+    }
+
   }
 }
