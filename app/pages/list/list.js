@@ -34,7 +34,7 @@ export class ListPage {
     this.CitiesService.findById(this.params.id).subscribe((data) => {
       this.city = data;
       this.map.coords = data.coords;
-    })
+    })  
 
     this.initializePlaces();
   }
