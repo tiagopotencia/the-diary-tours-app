@@ -1,9 +1,10 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, MenuController} from 'ionic-angular';
 import {PlacesPage} from '../places/places';
 import {Cities} from '../../providers/cities/cities';
 import {ListPage} from '../list/list';
+import {HoteisPage} from '../hoteis/list';
 
-@Page({ 
+@Page({
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
@@ -23,8 +24,12 @@ export class HomePage {
     })
   }
 
-  goToList(id) {
-    this.nav.push(ListPage, {
+  goToList() {
+    this.nav.push(ListPage)
+  }
+
+  goToHoteis(id) {
+    this.nav.push(HoteisPage, {
       id: id
     })
   }
@@ -48,6 +53,9 @@ export class HomePage {
 
        var btnLogin = document.getElementById('btnLogin');
        btnLogin.innerText =tripCode;
+
+       var btnMenu = document.getElementById('btnMenu');
+       btnMenu.style.display = "block";
     }
     else{
       alert("Código de viagem não encontrado.")

@@ -1,0 +1,55 @@
+
+.list {
+  background: color($colors, primary);
+}
+
+.roteiro{
+  ion-item{
+    padding-left: 0px;
+  }
+
+  ion-label{
+    margin: 0 0 0 0;
+  }
+
+  div{
+    padding-right: 0
+  }
+
+  span{
+    opacity: 0.89;
+    font-size: 1.2rem;
+    color: #666666;
+    line-height: 1.4rem;
+    display: block;
+    margin-top: 6px;
+  }
+
+  h2{
+    font-size: 1.9rem;
+    color: #998A5C;
+    letter-spacing: 0.5px;
+    line-height: 2rem;
+    position: relative;
+    float: left;
+        font-family: 'tfarrowlight', "Helvetica Neue", Helvetica, Arial;
+    line-height: 1.3;
+    font-weight: normal;
+  }
+
+  a{
+    color: #998A5C;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-right: 90px;
+        font-family: 'tfarrowlight', "Helvetica Neue", Helvetica, Arial;
+    line-height: 1.3;
+    font-weight: normal;
+  }
+}
+
+h2{
+    font-family: 'tfarrowlight', "Helvetica Neue", Helvetica, Arial;
+    line-height: 1.3;
+    font-weight: normal;
+}

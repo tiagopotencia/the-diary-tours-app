@@ -1,25 +1,41 @@
 <ion-navbar *navbar secondary>
 	<ion-nav-view>
+		<button ion-button menuToggle icon-only id="btnMenu" style="display:none;margin-top: 2%;position: absolute;">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+		<img alt="The Diary Tours" class="logo" src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
+		<ion-nav-buttons side="left">
+			<button id="btnLogin" class="botao" (click)="login()">
+			Login
+		</button>
+		</ion-nav-buttons>
 		<ion-view>
-      <img alt="The Diary Tours" class="logo" src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
-			<ion-nav-buttons side="left">
-				<button id="btnLogin" class="botao" (click)="login()">
-        Login
-      </button>
-			</ion-nav-buttons>
+
 		</ion-view>
 	</ion-nav-view>
 </ion-navbar>
+<ion-menu [content]="mycontent">
+	<ion-content #mycontent>
+		<ion-list>
+			<button ion-button ion-item detail-none (click)="goToHoteis()">Hoteis</button>
+			<button ion-button ion-item detail-none>Restaurantes</button>
+			<button ion-button ion-item detail-none>Close Menu</button>
+			<button ion-button ion-item detail-none>Close Menu</button>
+			<button ion-button ion-item detail-none>Close Menu</button>
+			<button ion-button ion-item detail-none>Close Menu</button>
 
+		</ion-list>
+	</ion-content>
+</ion-menu>
 <ion-content class="home">
 	<ion-fixed padding *ngIf="showSkipButton">
 		<button light outline small (click)="goToHome()">skip</button>
 	</ion-fixed>
-	
-  <ion-slides pager>
+
+  <ion-slides pager style="height: 400px;!important">
 		<ion-slide>
 			<div class="slide-header">
-				<img src="http://mediastream.jumeirah.com/webimage/supporting960x1350//globalassets/global/hotels-and-resorts/dubai/madinat-jumeirah/carousel/madinat-jumeirah-parkour-mobile-hero.jpg" />
+				<img src="http://tplabs.com.br/cdn/hotel1.jpg" style="max-width: 200%;!important"/>
 			</div>
 			<div style="position: absolute;
     top: 0;
@@ -37,7 +53,7 @@
 
 		<ion-slide>
 			<div class="slide-header">
-				<img src="http://mediastream.jumeirah.com/webimage/supporting960x1350//globalassets/global/mobile/mobile-home-page-image-v1.jpg" />
+				<img src="http://tplabs.com.br/cdn/hotel2.jpg" style="    max-width: 200%;!important" />
 			</div>
 			<div style="position: absolute;
     top: 0;
@@ -49,24 +65,6 @@
 				<h2>Explore the city's places</h2>
 				<p>
 					Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</p>
-			</div>
-		</ion-slide>
-
-		<ion-slide>
-			<div class="slide-header">
-				<img src="http://mediastream.jumeirah.com/webimage/supporting960x1350//globalassets/global/mobile/home-carousel-640x900p/home-page-hero-baa-v4.jpg" />
-			</div>
-			<div style="position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(-180deg,rgba(0,0,0,.00) 55%,#000 100%);"></div>
-			<div class="slide-content text-over-image">
-				<h2>Browse through the city</h2>
-				<p>
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 				</p>
 			</div>
 		</ion-slide>
@@ -127,7 +125,7 @@
     padding: 20px 10px 25px 10px;
     border-bottom: 1px solid #d1d1d1;
     box-sizing: border-box;">
-                <img src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
+                <img src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png" style="max-width: 200%;!important">
                 <p style="font-size: 1.1rem;
     color: #888;
     line-height: 1.3rem;

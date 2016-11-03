@@ -5,11 +5,12 @@ import {IntroPage} from './pages/intro/intro';
 import {HomePage} from './pages/home/home';
 import {Cities} from './providers/cities/cities';
 import {Places} from './providers/places/places';
+import {Hoteis} from './providers/hoteis/hoteis';
 
 @App({
   template: '<ion-nav id="my-nav" [root]="rootPage"></ion-nav>',
   config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places]
+  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places, Hoteis]
 })
 export class MyApp {
   static get parameters() {
