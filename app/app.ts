@@ -26,7 +26,7 @@ export class MyApp {
         this.rootPage = HomePage;
       } else {
         this.local.set('introShown', true);
-        this.rootPage = HomePage;
+        this.rootPage = IntroPage;
       }
     });
 

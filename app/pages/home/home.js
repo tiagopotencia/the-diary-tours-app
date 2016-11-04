@@ -1,6 +1,7 @@
 import {NavController, Page, MenuController} from 'ionic-angular';
 import {PlacesPage} from '../places/places';
 import {Cities} from '../../providers/cities/cities';
+import {Roteiro} from '../../providers/roteiro/roteiro';
 import {ListPage} from '../list/list';
 import {HoteisPage} from '../hoteis/list';
 
@@ -9,13 +10,15 @@ import {HoteisPage} from '../hoteis/list';
 })
 export class HomePage {
   static get parameters() {
-    return [[NavController], [Cities]];
+    return [[NavController],[Roteiro]];
   }
 
-  constructor(nav, CitiesService) {
+  constructor(nav, RoteiroService) {
     this.nav = nav;
-    this.CitiesService = CitiesService;
-    this.cities = [];
+    this.RoteiroService = RoteiroService;
+    this.roteiro = [];
+    // this.sanitizer = sanitizer;
+   
   }
 
   goToPlaces(id){
@@ -35,9 +38,13 @@ export class HomePage {
   }
 
   ngOnInit() {
-    this.CitiesService.findAll().subscribe((data) => {
-      this.cities = data;
-    })
+    // this.CitiesService.findAll().subscribe((data) => {
+    //   this.cities = data;
+    // });
+     this.RoteiroService.load().subscribe((data) => {
+      this.roteiro = data;
+      console.log(data)
+    });
   }
 
   login(){
@@ -45,7 +52,7 @@ export class HomePage {
 
     tripCode = tripCode.toUpperCase()
 
-    if (tripCode == "TFE2017")
+    if (tripCode == "TFE2016")
     {
        var divRoteiro = document.getElementById('divRoteiro');
        divRoteiro.setAttribute("style", "display:block");
@@ -56,6 +63,11 @@ export class HomePage {
 
        var btnMenu = document.getElementById('btnMenu');
        btnMenu.style.display = "block";
+
+       this.RoteiroService.load().subscribe((data) => {
+        this.roteiro = data;
+        console.log(data)
+        });
     }
     else{
       alert("Código de viagem não encontrado.")
