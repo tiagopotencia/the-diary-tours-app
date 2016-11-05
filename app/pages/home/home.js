@@ -82,7 +82,7 @@ export class HomePage {
 
     tripCode = tripCode.toUpperCase()
 
-    if (tripCode == "TFEMI2016") {
+    if (tripCode == "TFEMI16") {
       this.local.set('logged', true);
       this.loggedMode();
     }
