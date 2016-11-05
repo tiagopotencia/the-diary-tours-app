@@ -18,10 +18,20 @@
 	<ion-content #mycontent>
 		<ion-list>
 			<button ion-button ion-item detail-none (click)="goToHoteis()">Hoteis</button>
-
+			<button ion-button ion-item detail-none (click)="goToFlights()">Voos</button>
 		</ion-list>
 	</ion-content>
 </ion-menu>
+<div id="loading" class="loading">
+	<div style="position: absolute;
+    top: 24%; width: 100%;"><img src="https://media.giphy.com/media/IgQ8E05Dpg2ze/giphy.gif" style="
+    width: 100%;">
+	<p style="    text-align: center;
+    position: absolute;
+    top: 57%;
+    left: 27%;">Carregando sua experiência</p>
+	</div>
+</div>
 <ion-content class="home">
 	<ion-fixed padding *ngIf="showSkipButton">
 		<button light outline small (click)="goToHome()">skip</button>
@@ -30,7 +40,7 @@
 	<ion-slides pager style="height: 400px;!important">
 		<ion-slide>
 			<div class="slide-header">
-				<img src="http://tplabs.com.br/cdn/home.jpg" style="max-width: 200%;!important" />
+				<img id="img-home" src="http://tplabs.com.br/cdn/home.jpg" style="max-width: 200%;!important" />
 			</div>
 			<div style="position: absolute;
     top: 0;
@@ -56,21 +66,21 @@
 					<div class="hotel-info clearfix" style="
     padding: 0 15px;
 ">
-						<h2 style="float:none">{{roteiro.Dia}} às {{roteiro.Title}}<span class="line-break">{{roteiro.Description}}</span></h2>
+						<h2 style="float:none">{{roteiro.Dia}} às {{roteiro.Title}}<span class="line-break">{{sanitizeHtml(roteiro.Description)}}</span></h2>
 					</div>
 				</div>
 			</ion-item>
 		</ion-card>
 	</div>
-	<footer style="background-color:#e5e5e5">
+	<footer style="background-color:#000000">
 		<nav class="footer-nav">
 			<!-- ngIf: footer.PrimaryNav && footer.PrimaryNav.length > 0 -->
 			<div style="text-align: center;
     width: 100%;
-    padding: 20px 10px 25px 10px;
+    padding: 20px 0px 25px 10px;
     border-bottom: 1px solid #d1d1d1;
     box-sizing: border-box;">
-				<img src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png" style="max-width: 200%;!important">
+				<img src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
 				<p style="font-size: 1.1rem;
     color: #888;
     line-height: 1.3rem;
@@ -81,7 +91,7 @@
     margin-top: 15px;     list-style-type: none;padding-left: 0px;">
 					<li ng-repeat="item in footer.SocialMedia" class="ng-scope" style="    display: inline-block;
     margin-left: 5px;">
-						<a ng-href="https://instagram.com/thediarytours/" title="Instagram" href="https://instagram.com/thediarytours/">
+						<a ng-href="https://www.instagram.com/thefashionexperienceofficial/" title="Instagram" target="_blank" href="https://www.instagram.com/thefashionexperienceofficial/">
 							<img ng-src="//mediastream.jumeirah.com/webimage/supporting32x32//globalassets/global/social-icons/instagram_icon-mobile.png"
 								src="assets/images/ig.png">
 						</a>
