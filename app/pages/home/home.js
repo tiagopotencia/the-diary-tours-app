@@ -5,6 +5,7 @@ import { Roteiro } from '../../providers/roteiro/roteiro';
 import { ListPage } from '../list/list';
 import { HoteisPage } from '../hoteis/list';
 import { FlightsPage } from '../flights/list';
+import { SubwaysPage } from '../subway/list';
 import { DomSanitizationService } from '@angular/platform-browser';
 
 
@@ -34,6 +35,10 @@ export class HomePage {
 
   goToFlights() {
     this.nav.push(FlightsPage)
+  }
+
+  goToSubways() {
+    this.nav.push(SubwaysPage)
   }
 
   goToList() {
