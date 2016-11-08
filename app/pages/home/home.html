@@ -67,7 +67,7 @@
 					<div class="hotel-info clearfix" style="
     padding: 0 15px;
 ">
-						<h2 style="float:none">{{roteiro.Dia}} às {{roteiro.Title}}<span class="line-break">{{sanitizeHtml(roteiro.Description)}}</span></h2>
+						<h2 style="float:none">{{roteiro.Dia}} às {{roteiro.Title}}<span class="line-break" [innerHTML]="sanitizeHtml(roteiro.Description)"></span></h2>
 					</div>
 				</div>
 			</ion-item>
