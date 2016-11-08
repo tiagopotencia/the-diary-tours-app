@@ -24,6 +24,7 @@
     letter-spacing: 3px;
     line-height: 1.5rem;
     margin: 18px 0;
+    float: none;
   }
 }
 
@@ -37,6 +38,8 @@
     border: none;
     float: right;
     margin-top: 2%;
+    margin-left: 4%;
+    position: absolute;
 }
 
 .logo{
@@ -65,7 +68,7 @@
 div.text-over-image{
     position: absolute;
     left: 0;
-    top: 75%;
+    top: 60%;
     width: 100%;
     padding-left: 4%;
     padding-right: 33%;
@@ -89,4 +92,14 @@ div.text-over-image{
     max-height: 50px;
   }
   
+}
+
+.line-break{
+  white-space: -moz-pre-wrap!important;
+    white-space: -webkit-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    white-space: normal
 }

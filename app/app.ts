@@ -6,15 +6,12 @@ import {HomePage} from './pages/home/home';
 import {Cities} from './providers/cities/cities';
 import {Places} from './providers/places/places';
 import {Hoteis} from './providers/hoteis/hoteis'; 
-import {Roteiro} from './providers/roteiro/roteiro';
-import {Flights} from './providers/flights/flights'; 
+import {Roteiro} from './providers/roteiro/roteiro'; 
 
 @App({
   template: '<ion-nav id="my-nav" [root]="rootPage"></ion-nav>',
-  config: {
-    mode: 'md'
-  }, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places, Hoteis, Roteiro, Flights]
+  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
+  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places, Hoteis, Roteiro]
 })
 export class MyApp {
   static get parameters() {
@@ -29,7 +26,7 @@ export class MyApp {
         this.rootPage = HomePage;
       } else {
         this.local.set('introShown', true);
-        this.rootPage = HomePage;
+        this.rootPage = IntroPage;
       }
     });
 
@@ -39,7 +36,6 @@ export class MyApp {
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit() chamado");
     Splashscreen.hide();
   }
 }
