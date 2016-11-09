@@ -1,0 +1,110 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar secondary>
+	<ion-nav-view>
+		<ion-view>
+      <img alt="The Diary Tours" class="logo" src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png" style="margin-left: 17%;">
+		</ion-view>
+	</ion-nav-view>
+</ion-navbar>
+
+<div class="list-hotel-header" style="
+    margin: 0 0 0 0;
+    width: 100%;
+    box-sizing: border-box;
+">
+                <header style="
+    padding-left: 15px;
+    background: #ffffff;
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+">
+                    <div class="heading-wrapper" style="
+    display: table-cell;
+    text-align: left;
+    vertical-align: bottom;
+">
+                        <h1 class="ng-binding" style="
+    font-size: 2.2rem;
+    color: #262626;
+    line-height: 2.4rem;
+    float: left;
+    font-family: 'tfarrowlight', &quot;Helvetica Neue&quot;, Helvetica, Arial;
+    line-height: 1.3;
+    font-weight: normal;
+">Hoteis</h1>
+                    </div>
+                </header>
+            </div>
+<ion-content class="list">
+  <ion-card class="roteiro" *ngFor="let place of hoteis">
+    <ion-item>
+    <div class="ng-scope" ng-repeat="CarouselImage in Hotel.Carousel track by $index" owl-carousel-item="">
+                            <div class="featuredImage">
+                                <img alt="" carousel-image-on-load=""  src="{{place.image}}"><span class="carousel-title ng-binding"></span>
+                            </div>
+                        </div>
+      <div class="hotel-info-wrapper">
+                    <div class="hotel-info clearfix" style="
+    padding: 0 15px;
+">
+                        <h2><a class="location icon-location ng-binding line-break"  [attr.href]="place.map" target="_blank" style="
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #998A5C;
+    line-height: 1.5rem;
+    margin-top: 2%;
+    /* margin-left: 52%; */
+    padding-right: 0px;
+">Google Maps</a>{{place.name}}<span class="ng-binding line-break">{{place.description}}</span>
+                        <span class="ng-binding line-break">{{place.stars}}</span><span class="ng-binding line-break">{{place.endereco}}</span><span class="ng-binding line-break">{{place.telefone}}</span><span class="ng-binding line-break">{{place.fullDescription}}</span></h2>
+                    </div>
+                </div>
+    </ion-item>
+  </ion-card>
+
+  <footer style="background-color:#000000">
+		<nav class="footer-nav">
+			<!-- ngIf: footer.PrimaryNav && footer.PrimaryNav.length > 0 -->
+			<div style="text-align: center;
+    width: 100%;
+    padding: 20px 0px 25px 10px;
+    border-bottom: 1px solid #d1d1d1;
+    box-sizing: border-box;">
+				<img src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
+				<p style="font-size: 1.1rem;
+    color: #888;
+    line-height: 1.3rem;
+    margin-top: 5px;">© The Diary Tours</p>
+
+				<ul style="    text-align: center;
+    width: 100%;
+    margin-top: 15px;     list-style-type: none;padding-left: 0px;">
+					<li ng-repeat="item in footer.SocialMedia" class="ng-scope" style="    display: inline-block;
+    margin-left: 5px;">
+						<a ng-href="https://www.instagram.com/thefashionexperienceofficial/" title="Instagram" target="_blank" href="https://www.instagram.com/thefashionexperienceofficial/">
+							<img ng-src="//mediastream.jumeirah.com/webimage/supporting32x32//globalassets/global/social-icons/instagram_icon-mobile.png"
+								src="assets/images/ig.png">
+						</a>
+					</li>
+					<!-- end ngRepeat: item in footer.SocialMedia -->
+					<!-- end ngRepeat: item in footer.SocialMedia -->
+					<!-- end ngRepeat: item in footer.SocialMedia -->
+				</ul>
+				<!-- end ngIf: footer.SocialMedia && footer.SocialMedia.length > 0 -->
+			</div>
+			<!--End .footer-links-1-->
+		</nav>
+	</footer>
+</ion-content>
