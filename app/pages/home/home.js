@@ -98,7 +98,7 @@ export class HomePage {
 
     var img = document.getElementById('img-home');
 
-    img.setAttribute('src', 'http://tplabs.com.br/cdn/homelogada.jpg');
+    img.setAttribute('src', 'http://thediarytours.com/app/cdn/homelogada.jpg');
 
     var btnLogin = document.getElementById('btnLogin');
     btnLogin.innerText = "TFE";

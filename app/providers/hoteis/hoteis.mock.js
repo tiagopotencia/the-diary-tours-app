@@ -1,7 +1,7 @@
 export let HOTEIS = [{
   id: 0,
   city: 0,
-  image: 'http://tplabs.com.br/cdn/hotel1.jpg',
+  image: 'http://thediarytours.com/app/cdn/hotel1.jpg',
   name: 'Meu Hotel em Milão',
   description: 'Hotel Crowne Plaza Milan City',
   type: 'Monuments',
@@ -23,7 +23,7 @@ export let HOTEIS = [{
 },{
   id: 1,
   city: 1,
-  image: 'http://tplabs.com.br/cdn/hotel2.jpg',
+  image: 'http://thediarytours.com/app/cdn/hotel2.jpg',
   name: 'Meu Hotel em Roma',
   description: 'Hotel The Building',
   type: 'Monuments',
