@@ -4,6 +4,7 @@ import { Cities } from '../../providers/cities/cities';
 import { Roteiro } from '../../providers/roteiro/roteiro';
 import { ListPage } from '../list/list';
 import { HoteisPage } from '../hoteis/list';
+import { RoteirosPage } from '../roteiro/list';
 import { FlightsPage } from '../flights/list';
 import { SubwaysPage } from '../subway/list';
 import { DomSanitizationService } from '@angular/platform-browser';
@@ -48,6 +49,12 @@ export class HomePage {
   goToHoteis(id) {
     this.nav.push(HoteisPage, {
       id: id
+    })
+  }
+
+  goToRoteiro(day) {
+    this.nav.push(RoteirosPage, {
+      id: day
     })
   }
 

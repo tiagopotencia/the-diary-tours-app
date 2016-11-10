@@ -35,4 +35,17 @@ export class Roteiro {
           
     });
   }
+
+  loadByDay(dia) {
+    return Observable.create(observer =>{
+      this.http.get('https://stormy-tundra-43639.herokuapp.com/v1/itinerary/'+unescape(dia))
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data.Content;
+          observer.next(this.data);
+          observer.complete;
+        });
+          
+    });
+  }
 }

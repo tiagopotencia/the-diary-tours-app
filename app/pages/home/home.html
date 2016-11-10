@@ -59,19 +59,357 @@
 	<div id="divRoteiro" style="display:none">
 		<h2>ROTEIRO DIA A DIA</h2>
 
-		<ion-card class="roteiro" *ngFor="let roteiro of roteiro" style="width: 94.5%;
+<ion-pane class="roteiro" (click)="goToRoteiro('sabado')" style="width: 100%;
     overflow: auto;
     margin-bottom: 0;">
-			<ion-item>
-				<div class="hotel-info-wrapper">
-					<div class="hotel-info clearfix" style="
-    padding: 0 15px;
-">
-						<h2 style="float:none">{{roteiro.Dia}} às {{roteiro.Title}}<span class="line-break" [innerHTML]="sanitizeHtml(roteiro.Description)"></span></h2>
-					</div>
-				</div>
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/sabado.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Sábado</h2>
+                        </span>
+				</a>
 			</ion-item>
-		</ion-card>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('domingo')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/domingo.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Domingo</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('segunda')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/segunda.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Segunda-Feira</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('terca')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/terca.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Terça-Feira</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('quarta')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/quarta.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Quarta-Feira</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('quinta')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/quinta.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Quinta-Feira</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('sexta')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/sexta.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Sexta-Feira</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
+
+		<ion-pane class="roteiro" (click)="goToRoteiro('sabado2')" style="width: 100%;
+    overflow: auto;
+    margin-bottom: 0;">
+			<ion-item style="padding-left: 0px;">
+				<a href="#" style="    height: 0;
+    padding-bottom: 36.666666%;
+    display: block;
+    position: relative;
+    min-width: 280px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #000;">
+					<img src="http://www.thediarytours.com/app/cdn/sabado_2.jpg" style="opacity: .95;
+    
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;">
+					<span style="    display: inline-block;
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.87);;">
+                            <h2 style="    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+	margin-left: 36%;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,.50);
+    text-transform: uppercase;
+    cursor: pointer;">Sábado</h2>
+                        </span>
+				</a>
+			</ion-item>
+		</ion-pane>
 	</div>
 	<footer style="background-color:#000000">
 		<nav class="footer-nav">
