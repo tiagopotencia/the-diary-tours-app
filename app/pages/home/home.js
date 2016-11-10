@@ -60,6 +60,9 @@ export class HomePage {
     // this.CitiesService.findAll().subscribe((data) => {
     //   this.cities = data;
     // });
+
+    this.loggedMode();
+
     this.RoteiroService.load().subscribe((data) => {
       this.roteiro = data;
     });
@@ -67,14 +70,13 @@ export class HomePage {
     var divLoading = document.getElementById('loading');
     divLoading.style.display = "none";
 
-    this.local = new Storage(LocalStorage);
+    // this.local = new Storage(LocalStorage);
 
-    this.local.get('logged').then((result) => {
-      if (result) {
-        this.loggedMode();
-      } else {
-      }
-    });
+    // this.local.get('logged').then((result) => {
+    //   if (result) {
+    //     this.loggedMode();
+    //   }
+    // });
   }
 
   login() {
