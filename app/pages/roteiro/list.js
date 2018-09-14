@@ -40,7 +40,10 @@ export class RoteirosPage {
     console.log(param);
     this.Platform.ready().then(() => {
       this.RoteiroService.loadByDay(param).subscribe((data) => {
-        this.roteiro = data;
+        console.log("data -> ")
+        console.log(data.title.rendered)
+        var array = [{data}]
+        this.roteiro = array;
       })
     })
   }

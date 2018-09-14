@@ -8,6 +8,7 @@ import { RoteirosPage } from '../roteiro/list';
 import { FlightsPage } from '../flights/list';
 import { SubwaysPage } from '../subway/list';
 import { DomSanitizationService } from '@angular/platform-browser';
+import {WP} from '../../providers/wp/wp';
 
 
 @Page({
@@ -15,18 +16,19 @@ import { DomSanitizationService } from '@angular/platform-browser';
 })
 export class HomePage {
   static get parameters() {
-    return [[NavController], [Roteiro], [DomSanitizationService], [Platform]];
+    return [[NavController], [Roteiro], [DomSanitizationService], [Platform], [WP]];
   }
 
-  constructor(nav, RoteiroService, sanitizer, platform) {
+  constructor(nav, RoteiroService, sanitizer, platform, WP) {
     this.nav = nav;
     this.RoteiroService = RoteiroService;
-    this.roteiro = [];
     this.sanitizer = sanitizer;
-
+    this.WP = WP
+    WP.LoadAllData();
     
-
+    this.roteiros = []
   }
+
 
   goToPlaces(id) {
     this.nav.push(PlacesPage, {
@@ -70,8 +72,8 @@ export class HomePage {
 
     this.loggedMode();
 
-    this.RoteiroService.load().subscribe((data) => {
-      this.roteiro = data;
+    this.RoteiroService.loadLocal().subscribe((data) => {
+      this.roteiros = data;
     });
 
     var divLoading = document.getElementById('loading');
@@ -115,8 +117,8 @@ export class HomePage {
     var btnMenu = document.getElementById('btnMenu');
     btnMenu.style.display = "block";
 
-    this.RoteiroService.load().subscribe((data) => {
-      this.roteiro = data;
+    this.RoteiroService.loadLocal().subscribe((data) => {
+      this.roteiros = data;
     });
   }
 }

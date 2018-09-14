@@ -17,26 +17,26 @@ export class Roteiro {
     this.data;
   }
   // chama dados
-  load() {
-    if (this.data) {
-      // already loaded data
-        return Observable.create(observer =>{
-        observer.next(this.data);
-        observer.complete;    
-      });
-    }
-    new Promise(resolve => {
-      this.http.get('https://stormy-tundra-43639.herokuapp.com/v1/tripuser/')
-        .map(res => res.json())
-        .subscribe(data => {
-          this.data = data;
-          resolve(this.data);
-        });
-    });
+  // load() {
+  //   if (this.data) {
+  //     // already loaded data
+  //       return Observable.create(observer =>{
+  //       observer.next(this.data);
+  //       observer.complete;    
+  //     });
+  //   }
+  //   new Promise(resolve => {
+  //     this.http.get('https://stormy-tundra-43639.herokuapp.com/v1/tripuser/')
+  //       .map(res => res.json())
+  //       .subscribe(data => {
+  //         this.data = data;
+  //         resolve(this.data);
+  //       });
+  //   });
 
-    return Observable.create(observer =>{
-      observer.next(this.data);
-      observer.complete;    
-    });
-  }
+  //   return Observable.create(observer =>{
+  //     observer.next(this.data);
+  //     observer.complete;    
+  //   });
+  // }
 }

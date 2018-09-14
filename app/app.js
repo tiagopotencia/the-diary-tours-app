@@ -7,14 +7,15 @@ import {Cities} from './providers/cities/cities';
 import {Places} from './providers/places/places';
 import {Hoteis} from './providers/hoteis/hoteis'; 
 import {Roteiro} from './providers/roteiro/roteiro';
-import {Flights} from './providers/flights/flights'; 
+import {Flights} from './providers/flights/flights';
+import {WP} from './providers/wp/wp';
 
 @App({
   template: '<ion-nav id="my-nav" [root]="rootPage"></ion-nav>',
   config: {
     mode: 'md'
   }, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places, Hoteis, Roteiro, Flights]
+  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, Cities, Places, Hoteis, Roteiro, Flights, WP]
 })
 export class MyApp {
   static get parameters() {
