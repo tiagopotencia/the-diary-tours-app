@@ -70,7 +70,7 @@ export class HomePage {
     //   this.cities = data;
     // });
 
-    this.loggedMode();
+    // this.loggedMode();
 
     this.RoteiroService.loadLocal().subscribe((data) => {
       this.roteiros = data;
@@ -79,13 +79,13 @@ export class HomePage {
     var divLoading = document.getElementById('loading');
     divLoading.style.display = "none";
 
-    // this.local = new Storage(LocalStorage);
+    this.local = new Storage(LocalStorage);
 
-    // this.local.get('logged').then((result) => {
-    //   if (result) {
-    //     this.loggedMode();
-    //   }
-    // });
+    this.local.get('logged').then((result) => {
+      if (result) {
+        this.loggedMode();
+      }
+    });
   }
 
   login() {
@@ -93,7 +93,7 @@ export class HomePage {
 
     tripCode = tripCode.toUpperCase()
 
-    if (tripCode == "TFEMI16") {
+    if (tripCode == "LONDRES18" || tripCode == "PARIS18") {
       this.local.set('logged', true);
       this.loggedMode();
     }

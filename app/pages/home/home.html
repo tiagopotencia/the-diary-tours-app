@@ -5,7 +5,7 @@
         </button>
         <img alt="The Diary Tours" class="logo" src="http://www.thediarytours.com/wp-content/uploads/2016/04/TheDiary-300x77.png">
         <ion-nav-buttons side="left">
-            <button id="btnLogin" class="botao">
+            <button id="btnLogin" class="botao" (click)="login()">
                 Login
             </button>
         </ion-nav-buttons>
@@ -19,15 +19,16 @@
         <ion-list>
             <button ion-button ion-item detail-none (click)="goToHoteis()">Hoteis</button>
             <button ion-button ion-item detail-none (click)="goToFlights()">Voos</button>
+            <!-- <button ion-button ion-item detail-none (click)="goToRoteiro()">Roteiro</button> -->
             <!--<button ion-button ion-item detail-none (click)="goToSubways()">Metrôs</button>-->
         </ion-list>
     </ion-content>
 </ion-menu>
 <div id="loading" class="loading">
     <div style="position: absolute;
-    top: 24%; width: 100%;"><img src="https://media.giphy.com/media/IgQ8E05Dpg2ze/giphy.gif"
-            style="
-    width: 100%;">
+    top: 24%; width: 100%;">
+        <!-- <img src="https://media.giphy.com/media/IgQ8E05Dpg2ze/giphy.gif" style="
+    width: 100%;"> -->
         <p style="    text-align: center;
     position: absolute;
     top: 57%;
@@ -63,22 +64,35 @@
         <ion-pane class="roteiro" (click)="goToRoteiro($roteiro.idRoteiro)" *ngFor="let roteiro of roteiros" style="width: 100%;
     overflow: auto;
     margin-bottom: 0;">
+                <!-- style="
+                    height: 0;
+                    padding-bottom: 36.666666%;
+                    display: block;
+                    position: relative;
+                    min-width: 280px;
+                    overflow: hidden;
+                    max-width: 1200px;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    "[ngStyle]="{'background-image': 'url(' + roteiro.image + ')'}" -->
             <ion-item style="padding-left: 0px;">
-                <a href="#" style="    height: 0;
-    padding-bottom: 36.666666%;
-    display: block;
-    position: relative;
-    min-width: 280px;
-    overflow: hidden;
-    max-width: 1200px;
-    width: 100%;
-    background-color: #000;">
-                    <img src="http://www.thediarytours.com/app/cdn/sabado.jpg" style="opacity: .95;
+                <a id="roteiro-link" href="#" style="
+                height: 0;
+                padding-bottom: 11.666666%;
+                display: block;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;"
+                    >
+                    <!-- <img src="http://www.thediarytours.com/wp-content/uploads/2018/04/tfe.png" style="opacity: .95;
     
     left: 0;
     position: absolute;
     width: 100%;
-    height: auto;">
+    height: auto;"> -->
                     <span style="    display: inline-block;
     width: 100%;
     height: 37px;
@@ -89,9 +103,9 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.87);;">
                         <h2 style="    display: inline-block;
+                        width: 100%;
     vertical-align: middle;
     margin-top: 8px;
-	margin-left: 36%;
     font-size: 2rem;
     color: #fff;
     letter-spacing: 3px;
@@ -101,6 +115,16 @@
     cursor: pointer;">{{roteiro.diaRoteiro}}</h2>
                     </span>
                 </a>
+                <div class="hotel-info-wrapper">
+                    <div class="hotel-info clearfix" style="
+            padding: 0 15px;
+            ">
+                        <h2 style="width: 100%">{{roteiro.title}}<span class="ng-binding line-break" [innerHTML]="sanitizeHtml(roteiro.description)">
+                            </span>
+                            <!-- <span class="ng-binding line-break">{{flights.time}}</span><span class="ng-binding line-break" ng-if="flights.extraInfo">{{flights.extraInfo}}</span> -->
+                        </h2>
+                    </div>
+                </div>
             </ion-item>
         </ion-pane>
 
