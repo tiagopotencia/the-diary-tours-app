@@ -3,6 +3,7 @@ import {Hoteis} from '../../providers/hoteis/hoteis';
 import * as _ from '../../../node_modules/lodash/lodash';
 import {Observable} from 'rxjs/Observable';
 import {HOTEIS} from '../../providers/hoteis/hoteis.mock';
+import { DomSanitizationService } from '@angular/platform-browser';
 
 /*
   Generated class for the ListPage page.
@@ -15,28 +16,36 @@ import {HOTEIS} from '../../providers/hoteis/hoteis.mock';
 })
 export class HoteisPage {
   static get parameters() {
-    return [[NavController], [NavParams], [Hoteis]];
+    return [[NavController], [NavParams], [DomSanitizationService]];
   }
 
-  constructor(NavController, HoteisService) {
+  constructor(NavController, HoteisService, sanitizer) {
     this.nav = NavController;
     this.HoteisService = HoteisService;
     this.hoteis = [];
+    this.sanitizer = sanitizer;
 
-
-    this.initializeHoteis();
+    var data = JSON.parse(window.localStorage.getItem("hoteis"));
+    this.initializeHoteis(data);
 
   }
 
-  initializeHoteis(){
-    this.findAll().subscribe((data) => {
+  sanitizeHtml(content) {
+    console.log("this ->")
+    console.log(this)
+    var htmlText = this.sanitizer.bypassSecurityTrustHtml(content).changingThisBreaksApplicationSecurity;
+    return htmlText;
+  }
+
+  initializeHoteis(dataLocal){
+    this.findAll(dataLocal).subscribe((data) => {
       this.hoteis = data;
     })
   }
 
-  findAll() {
+  findAll(data) {
       return Observable.create(observer => {
-          observer.next(HOTEIS);
+          observer.next(data);
           observer.complete();
       });
   }

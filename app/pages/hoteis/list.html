@@ -52,11 +52,12 @@
                                 <img alt="" carousel-image-on-load=""  src="{{place.image}}"><span class="carousel-title ng-binding"></span>
                             </div>
                         </div>
-      <div class="hotel-info-wrapper">
+      <!-- <div class="hotel-info-wrapper">
                     <div class="hotel-info clearfix" style="
     padding: 0 15px;
 ">
-                        <h2><a class="location icon-location ng-binding line-break"  [attr.href]="place.map" target="_blank" style="
+                        <h2> -->
+                            <!-- <a class="location icon-location ng-binding line-break"  [attr.href]="place.map" target="_blank" style="
     display: inline-block;
     position: absolute;
     top: 0;
@@ -67,10 +68,26 @@
     margin-top: 2%;
     /* margin-left: 52%; */
     padding-right: 0px;
-">Google Maps</a>{{place.name}}<span class="ng-binding line-break">{{place.description}}</span>
-                        <span class="ng-binding line-break">{{place.stars}}</span><span class="ng-binding line-break">{{place.endereco}}</span><span class="ng-binding line-break">{{place.telefone}}</span><span class="ng-binding line-break">{{place.fullDescription}}</span></h2>
+">Google Maps</a> -->
+<!-- {{place.name}}<span class="ng-binding line-break" [innerHTML]="sanitizeHtml(place.description)"></span> -->
+                        <!-- <span class="ng-binding line-break">{{place.stars}}</span><span class="ng-binding line-break">{{place.endereco}}</span><span class="ng-binding line-break">{{place.telefone}}</span><span class="ng-binding line-break">{{place.fullDescription}}</span> -->
+                    <!-- </h2>
                     </div>
-                </div>
+                </div> -->
+
+
+                <div class="hotel-info-wrapper">
+                        <div class="hotel-info clearfix" style="
+        padding: 0 15px;
+    ">
+                            <h2>{{place.title}}<span class="ng-binding line-break"
+                                [innerHTML]="sanitizeHtml(place.description)">
+                            </span>
+                            <!-- <span class="ng-binding line-break">{{flights.time}}</span><span class="ng-binding line-break" ng-if="flights.extraInfo">{{flights.extraInfo}}</span> -->
+                        </h2>
+                        </div>
+                    </div>
+
     </ion-item>
   </ion-card>
 
