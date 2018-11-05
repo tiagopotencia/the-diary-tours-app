@@ -18,14 +18,29 @@ static get parameters() {
   }
     load() {
         return Observable.create(observer =>{
-      this.http.get('http://thediarytours.com/app/json/flights.json')
+      this.http.get('http://www.thediarytours.com/wp-json/wp/v2/voo?filter[category]=viagem1')
         .map(res => res.json())
         .subscribe(data => {
+          console.log(data)
           this.data = data;
           observer.next(this.data);
           observer.complete;
         });
           
-    });
-    }
+    // });
+    // }
+
+    // load(db) {
+    //   return Observable.create(observer =>{
+    //     console.log("this ->")
+    //     console.log(db)
+    // new Observable(JSON.parse(db.getItem("voos"))) 
+    //   .subscribe(data => {
+    //     this.data = data;
+    //     observer.next(this.data);
+    //     observer.complete;
+    //   });
+        
+  });
+  }
 }

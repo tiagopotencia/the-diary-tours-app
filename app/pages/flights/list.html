@@ -59,8 +59,11 @@
                     <div class="hotel-info clearfix" style="
     padding: 0 15px;
 ">
-                        <h2>{{flights.title}}<span class="ng-binding line-break">{{flights.address}}</span>
-                        <span class="ng-binding line-break">{{flights.time}}</span><span class="ng-binding line-break" ng-if="flights.extraInfo">{{flights.extraInfo}}</span></h2>
+                        <h2>{{flights.title.rendered}}<span class="ng-binding line-break"
+                            [innerHTML]="sanitizeHtml(flights.content.rendered)">
+                        </span>
+                        <!-- <span class="ng-binding line-break">{{flights.time}}</span><span class="ng-binding line-break" ng-if="flights.extraInfo">{{flights.extraInfo}}</span> -->
+                    </h2>
                     </div>
                 </div>
     </ion-item>

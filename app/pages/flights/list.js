@@ -2,6 +2,7 @@ import {Page, NavController, NavParams} from 'ionic-angular';
 import {Flights} from '../../providers/flights/flights';
 import * as _ from '../../../node_modules/lodash/lodash';
 import {Observable} from 'rxjs/Observable';
+import { DomSanitizationService } from '@angular/platform-browser';
 
 /*
   Generated class for the ListPage page.
@@ -14,21 +15,33 @@ import {Observable} from 'rxjs/Observable';
 })
 export class FlightsPage {
   static get parameters() {
-    return [[NavController], [Flights]];
+    return [[NavController], [Flights], [DomSanitizationService]];
   }
 
-  constructor(NavController, FlightService) {
+  constructor(NavController, FlightService, sanitizer) {
     this.nav = NavController;
     this.FlightService = FlightService;
     this.flights = [];
+    this.sanitizer = sanitizer;
 
 
     this.initializeFlights();
 
   }
-
+  
+  sanitizeHtml(content) {
+    console.log("this ->")
+    console.log(this)
+    var htmlText = this.sanitizer.bypassSecurityTrustHtml(content).changingThisBreaksApplicationSecurity;
+    return htmlText;
+  }
+  
   initializeFlights(){
-    this.FlightService.load().subscribe((data) => {
+
+    console.log("window.localStorage ->")
+    console.log(window.localStorage)
+
+    this.FlightService.load(window.localStorage).subscribe((data) => {
       this.flights = data;
       console.log(data)
     });
