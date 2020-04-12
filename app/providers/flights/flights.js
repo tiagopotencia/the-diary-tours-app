@@ -18,7 +18,7 @@ static get parameters() {
   }
     load() {
         return Observable.create(observer =>{
-      this.http.get('http://www.thediarytours.com/wp-json/wp/v2/voo?filter[category]=viagem1')
+      this.http.get('https://www.thediarytours.com/wp-json/wp/v2/voo?filter[category]=viagem1')
         .map(res => res.json())
         .subscribe(data => {
           console.log(data)

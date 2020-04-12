@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="Content-Security-Policy" content="worker-src data: http://www.thediarytours.com/app2/sw.js; default-src *; child-src; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *; img-src 'self' * data:">
+  <!-- <meta http-equiv="Content-Security-Policy" content="worker-src data: *thediarytours.com/app/sw.js; default-src *; child-src; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *; img-src 'self' * data:"> -->
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -25,10 +25,12 @@
   <ion-app></ion-app>
 
   <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker
-                 .register('/sw.js')
-                 .then(function() { console.log("Service Worker Registered"); });
+      if ('serviceWorker' in navigator) {
+        // window.addEventListener('load', function() {
+          navigator.serviceWorker
+          .register('sw.js')
+          .then(function() { console.log("Service Worker Registered"); });;
+        // });
       }
   </script>
 

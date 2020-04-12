@@ -18,7 +18,7 @@ static get parameters() {
   }
     load() {
         return Observable.create(observer =>{
-      this.http.get('http://thediarytours.com/app/json/subways.json')
+      this.http.get('https://thediarytours.com/app/json/subways.json')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;

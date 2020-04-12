@@ -4,9 +4,9 @@ import {Observable} from 'rxjs/Observable';
 export const keyRoteiro = "roteiro";
 export const keyHoteis = "hoteis";
 export const keyVoos = "voo";
-const UrlRoteiro = "http://www.thediarytours.com/wp-json/wp/v2/" + keyRoteiro + "?per_page=100";
-const UrlHoteis = "http://www.thediarytours.com/wp-json/wp/v2/" + keyHoteis + "?per_page=100";
-const UrlVoos = "http://www.thediarytours.com/wp-json/wp/v2/" + keyVoos + "?per_page=100";
+const UrlRoteiro = "https://www.thediarytours.com/wp-json/wp/v2/" + keyRoteiro + "?per_page=100";
+const UrlHoteis = "https://www.thediarytours.com/wp-json/wp/v2/" + keyHoteis + "?per_page=100";
+const UrlVoos = "https://www.thediarytours.com/wp-json/wp/v2/" + keyVoos + "?per_page=100";
 
 
 export class WP {
